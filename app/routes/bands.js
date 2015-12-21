@@ -34,6 +34,9 @@ var pretender = Song.create({
 // Bands
 var Band = Ember.Object.extend({
   name: '',
+  slug: Ember.computed('name', function () {
+    return this.get('name').dasherize();
+  })
 });
 
 var BandsCollection = Ember.Object.extend({
@@ -53,8 +56,7 @@ var bands = BandsCollection.create();
 bands.get('content').pushObjects([ledZeppelin, pearlJam, fooFighters]);
 
 export default Ember.Route.extend({
-  name: '',
-  slug: Ember.computed('name', function () {
-    return this.get('name').dasherize();
-  })
+  model: function () {
+    return bands;
+  }
 });
