@@ -16,8 +16,9 @@ html, body {
 }
 
 .songs .rating {
-color: #aaa;
-font-size: 1.1em;
+  color: #aaa;
+  font-size: 1.1em;
+}
 
 .empty-list {
   min-height: 100px;
@@ -51,4 +52,12 @@ font-size: 1.1em;
 }
 .new-song-button {
   margin-left: 20px;
+}
+
+.rating-panel {
+  float: right;
+}
+
+.rating-panel .star-rating {
+  cursor: pointer;
 }
